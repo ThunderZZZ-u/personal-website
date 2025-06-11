@@ -1,6 +1,21 @@
-/* --- 全局設定 --- */
+/*
+   個人網站 Style Sheet - 重構修正版
+   ------------------------------------
+   作者: Gemini
+   日期: 2025-06-11
+   ------------------------------------
+   結構目錄:
+   1. 全局與基本設定 (Globals & Resets)
+   2. 主要佈局 (Main Layout)
+   3. 導覽列 (Navigation)
+   4. 通用元件 (Components)
+   5. 頁面專用樣式 (Page-Specific Styles)
+*/
+
+
+/* --- 1. 全局與基本設定 (Globals & Resets) --- */
 body {
-    background-color: #121212; /* 更深的背景 */
+    background-color: #121212;
     color: #e0e0e0;
     font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -12,66 +27,9 @@ body {
     box-sizing: border-box;
 }
 
-/* --- 主要容器 --- */
-.main-container {
-    width: 90%;
-    max-width: 1000px; /* 稍微縮小寬度以符合截圖 */
-    background-color: #1e1e1e; /* 深灰色容器背景 */
-    border: 2px solid #4a00e0; /* 更亮的紫色邊框 */
-    border-radius: 20px;
-    padding: 20px 40px;
-    box-shadow: 0 0 25px rgba(74, 0, 224, 0.6); /* 更明顯的光暈 */
-    text-align: center;
-}
-
-/* --- 導覽列新樣式 --- */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px; /* 縮小按鈕間距 */
-}
-
-/* 導覽列按鈕 - 預設樣式 */
-nav a {
-    text-decoration: none;
-    color: #f0f0f0; /* 文字改為亮色 */
-    background-color: #333; /* 按鈕背景改為深色 */
-    padding: 8px 25px; /* 縮小按鈕尺寸 */
-    border-radius: 20px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block;
-    border: 1px solid #555;
-}
-
-/* 導覽列按鈕 - 滑鼠懸停效果 */
-nav a:hover {
-    background-color: #444;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-/* 當前頁面的按鈕 (高亮) - 這解決了您顏色不明顯的問題 */
-nav a.active {
-    background-color: #ffffff; /* 白色背景 */
-    color: #1e1e1e; /* 深色文字 */
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-/* --- 主要內容區域 --- */
-main {
-    padding-top: 20px;
-    border-top: 1px solid #333; /* 分隔線顏色變更 */
-}
-
 h1, h2 {
-    color: #f5f5f5; /* 標題改為更亮的白色 */
-    border-bottom: none; /* 移除標題底線 */
+    color: #f5f5f5;
+    border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 30px;
 }
@@ -80,62 +38,107 @@ h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 
 
-/* --- 首頁專用 --- */
-.profile-pic {
-    max-width: 50%;
-    height: auto;
-    border-radius: 15px;
-    margin: 10px 0;
-    border: 2px solid #4a00e0; /* 邊框顏色同步 */
+/* --- 2. 主要佈局 (Main Layout) --- */
+.main-container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #1e1e1e;
+    border: 2px solid #4a00e0;
+    border-radius: 20px;
+    padding: 20px 40px;
+    box-shadow: 0 0 25px rgba(74, 0, 224, 0.6);
+    text-align: center;
 }
 
-.tagline {
-    font-size: 1.2em;
-    font-style: italic;
-    color: #aaa;
-    margin-top: 25px;
+main {
+    padding-top: 20px;
+    border-top: 1px solid #333;
 }
 
-/* --- 證照頁專用 (已修正圖片對齊問題) --- */
-.licenses-container {
+
+/* --- 3. 導覽列 (Navigation) --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start; /* 頂部對齊 */
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 30px; /* 項目之間的間距 */
+    gap: 10px;
 }
 
-.license-item {
-    flex-basis: 45%; /* 每個項目佔據約45%寬度 */
-    min-width: 280px;
-    text-align: center; /* 讓標題文字置中 */
-}
-
-.license-item p {
-    font-size: 1.2em;
+nav a {
+    text-decoration: none;
+    color: #f0f0f0;
+    background-color: #333;
+    padding: 8px 25px;
+    border-radius: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid #555;
+}
+
+nav a:hover {
+    background-color: #444;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    background-color: #ffffff;
+    color: #1e1e1e;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+/* --- 4. 通用元件 (Components) --- */
+
+/* 用於包裹文字內容的基礎容器 */
+.content-section {
+    max-width: 650px; /* 統一設定最大寬度 */
+    margin: 0 auto; /* 使區塊本身在父容器中置中 */
+    font-size: 1.1em;
+    line-height: 1.8;
     color: #ccc;
 }
 
-/* 這是解決問題的關鍵樣式 */
-.license-item img {
-    width: 100%; /* 圖片寬度填滿容器 */
-    height: 300px; /* 強制設定一個固定的高度 */
-    object-fit: contain; /* 保持原始比例顯示在框內，不變形 */
-    border: 1px solid #444;
-    border-radius: 10px;
-    background-color: #2c2c2c; /* 為留白的區域加上背景色 */
-    padding: 5px; /* 圖片與邊框間留一點內距 */
-    box-sizing: border-box; /* 確保 padding 不會影響總寬高 */
+/* 技能標籤 */
+.skills-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 15px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-/* --- 聯絡表單新樣式 --- */
+.skills-tags-container span {
+    display: inline-block;
+    background-color: rgba(187, 134, 252, 0.15);
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.skills-tags-container span:hover {
+    background-color: #bb86fc;
+    color: #1e1e1e;
+    cursor: default;
+    transform: translateY(-2px);
+}
+
+/* 聯絡表單 */
 .contact-line {
     color: #bbb;
 }
 .contact-line a {
-    color: #bb86fc; /* 淡紫色連結 */
+    color: #bb86fc;
     font-weight: bold;
     text-decoration: none;
 }
@@ -176,9 +179,9 @@ h2 { font-size: 2em; }
     color: #f0f0f0;
     border: 1px solid #555;
     padding: 8px 30px;
-    border-radius: 5px; /* 改為方角 */
+    border-radius: 5px;
     font-size: 1em;
-    font-weight: normal; /* 取消粗體 */
+    font-weight: normal;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -187,71 +190,128 @@ h2 { font-size: 2em; }
     color: #fff;
 }
 
-/* --- 其他內容頁通用 --- */
-.content-section {
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #ccc;
-}
-.content-section h3 {
-    color: #bb86fc;
-    font-size: 1.4em;
-}
-.content-section a {
-    color: #bb86fc;
+
+/* --- 5. 頁面專用樣式 (Page-Specific Styles) --- */
+
+/* 首頁 */
+.profile-pic {
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0;
+    border: 2px solid #4a00e0;
 }
 
-/* --- 學歷頁面專用樣式 (修正跑版與美化) --- */
-.content-section {
-    text-align: center; /* 將容器內所有文字置中，解決跑版感覺 */
+.tagline {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #aaa;
+    margin-top: 25px;
 }
 
+/* 關於我頁面 */
+.about-text-section {
+    text-align: left; /* 修正：只讓自我介紹的文字靠左，易於閱讀 */
+}
+.skills-section {
+    margin-top: 50px;
+}
+.skills-section h3 {
+    color: #bb86fc;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* 學歷頁面 */
 .education-entry {
-    margin: 0 auto 25px auto; /* 上下邊距25px，左右自動，使其在容器內置中 */
-    padding-bottom: 25px; /* 每個項目的底部留出空間 */
-    border-bottom: 1px dashed #444; /* 在每個項目下方加上分隔虛線 */
-    max-width: 400px; /* 設定最大寬度，避免內容過寬 */
+    margin: 0 auto 25px auto;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed #444;
+    max-width: 400px;
+    text-align: center; /* 修正：只讓學歷區塊置中 */
 }
-
-/* 最後一個學歷項目不需要底線 */
 .education-entry:last-of-type {
     border-bottom: none;
 }
-
-
 .education-entry h3 {
-    margin-bottom: 8px; /* 學校名稱和下方說明的間距 */
+    margin-bottom: 8px;
     font-size: 1.6em;
     color: #f5f5f5;
 }
-
+.education-entry h3 a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.education-entry h3 a:hover {
+    color: #bb86fc;
+    text-decoration: underline;
+}
 .education-entry p {
     margin: 0;
     font-size: 1.1em;
     color: #ccc;
 }
-
+.education-image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    border: 1px solid #444;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
 .achievement-highlight {
-    margin-top: 40px; /* 與上方學歷區塊的間距 */
+    margin-top: 40px;
     padding: 20px;
-    border: 2px solid #bb86fc; /* 使用主題色邊框來突顯 */
+    border: 2px solid #bb86fc;
     border-radius: 10px;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center; /* 修正：讓特別事蹟也置中 */
 }
-
 .achievement-highlight h4 {
     margin: 0 0 10px 0;
     font-size: 1.3em;
     color: #f0f0f0;
 }
-
 .achievement-highlight p {
     margin: 0;
     font-size: 1.1em;
     color: #ccc;
+}
+
+
+/* 證照頁面 */
+.licenses-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.license-item {
+    flex-basis: 45%;
+    min-width: 280px;
+    text-align: center;
+}
+.license-item p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+.license-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #2c2c2c;
+    padding: 5px;
+    box-sizing: border-box;
 }

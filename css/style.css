@@ -96,27 +96,38 @@ h2 { font-size: 2em; }
     margin-top: 25px;
 }
 
-/* --- 證照頁專用 --- */
+/* --- 證照頁專用 (已修正圖片對齊問題) --- */
 .licenses-container {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: flex-start; /* 頂部對齊 */
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 30px; /* 項目之間的間距 */
 }
+
 .license-item {
-    flex-basis: 45%;
+    flex-basis: 45%; /* 每個項目佔據約45%寬度 */
     min-width: 280px;
+    text-align: center; /* 讓標題文字置中 */
 }
+
 .license-item p {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #ccc;
 }
+
+/* 這是解決問題的關鍵樣式 */
 .license-item img {
-    max-width: 100%;
+    width: 100%; /* 圖片寬度填滿容器 */
+    height: 300px; /* 強制設定一個固定的高度 */
+    object-fit: contain; /* 保持原始比例顯示在框內，不變形 */
+    border: 1px solid #444;
     border-radius: 10px;
-    border: 2px solid #444;
+    background-color: #2c2c2c; /* 為留白的區域加上背景色 */
+    padding: 5px; /* 圖片與邊框間留一點內距 */
+    box-sizing: border-box; /* 確保 padding 不會影響總寬高 */
 }
 
 /* --- 聯絡表單新樣式 --- */

@@ -192,3 +192,55 @@ h2 { font-size: 2em; }
 .content-section a {
     color: #bb86fc;
 }
+
+/* --- 學歷頁面專用樣式 (修正跑版與美化) --- */
+.content-section {
+    text-align: center; /* 將容器內所有文字置中，解決跑版感覺 */
+}
+
+.education-entry {
+    margin: 0 auto 25px auto; /* 上下邊距25px，左右自動，使其在容器內置中 */
+    padding-bottom: 25px; /* 每個項目的底部留出空間 */
+    border-bottom: 1px dashed #444; /* 在每個項目下方加上分隔虛線 */
+    max-width: 400px; /* 設定最大寬度，避免內容過寬 */
+}
+
+/* 最後一個學歷項目不需要底線 */
+.education-entry:last-of-type {
+    border-bottom: none;
+}
+
+
+.education-entry h3 {
+    margin-bottom: 8px; /* 學校名稱和下方說明的間距 */
+    font-size: 1.6em;
+    color: #f5f5f5;
+}
+
+.education-entry p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.achievement-highlight {
+    margin-top: 40px; /* 與上方學歷區塊的間距 */
+    padding: 20px;
+    border: 2px solid #bb86fc; /* 使用主題色邊框來突顯 */
+    border-radius: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.achievement-highlight h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    color: #f0f0f0;
+}
+
+.achievement-highlight p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #ccc;
+}

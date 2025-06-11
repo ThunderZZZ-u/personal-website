@@ -1,0 +1,237 @@
+/* /* --- 全局設定 ---
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+/* --- 主要容器 --- */
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #2b2b2b;
+    border: 3px solid #8A2BE2; /* 紫色邊框 */
+    border-radius: 20px;
+    padding: 20px 40px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    text-align: center;
+}
+
+/* --- 導覽列 --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    background-color: #A7D8DE; /* 淺藍綠色 */
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+    background-color: #ffffff;
+    color: #8A2BE2;
+    font-weight: bold;
+}
+
+/* --- 主要內容區域 --- */
+main {
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: #A7D8DE;
+    border-bottom: 2px solid #A7D8DE;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+/* --- 首頁專用 --- */
+.profile-pic {
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0;
+    border: 3px solid #A7D8DE;
+}
+
+.tagline {
+    font-size: 1.3em;
+    font-style: italic;
+    color: #ccc;
+    margin-top: 25px;
+}
+
+/* --- 證照頁專用 --- */
+.licenses-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.license-item {
+    flex-basis: 45%;
+    min-width: 280px;
+}
+
+.license-item p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.license-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #555;
+}
+
+/* --- 其他內容頁通用 --- */
+.content-section {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.content-section h3 {
+    color: #A7D8DE;
+    font-size: 1.5em;
+}
+
+.content-section a {
+    color: #A7D8DE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content-section a:hover {
+    text-decoration: underline;
+}
+
+.content-section ul {
+    list-style-position: inside;
+}
+
+/* 響應式設計：小螢幕 */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    nav a { padding: 10px 20px; font-size: 0.9em; }
+    .main-container { padding: 20px; }
+}
+
+/* --- 聯絡表單專用樣式 --- */
+.contact-line {
+    font-size: 1.1em;
+    color: #ddd;
+    margin: 10px 0;
+}
+
+.contact-line a {
+    color: #A7D8DE;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-line a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* 在小螢幕時換行 */
+    justify-content: center;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    color: #f0f0f0;
+    flex-shrink: 0; /* 防止label被壓縮 */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #555;
+    background-color: #3e3e3e;
+    color: #fff;
+    font-size: 1em;
+    width: 280px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #A7D8DE;
+    box-shadow: 0 0 5px rgba(167, 216, 222, 0.5);
+}
+
+.submit-btn {
+    background-color: #A7D8DE;
+    color: #333;
+    border: none;
+    padding: 12px 80px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} 
